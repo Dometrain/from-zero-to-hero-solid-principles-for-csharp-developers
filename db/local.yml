@@ -1,0 +1,23 @@
+dbUp:
+  version: 1
+  provider: postgresql
+  connectionString: $CONNECTION_STRING$
+  connectionTimeoutSec: 30
+  disableVars: no
+  transaction: PerScript
+  scripts:
+    - folder: schema
+      subFolders: no
+      order: 100
+      runAlways: yes
+      encoding: utf-8
+      matchFullPath: no
+    - folder: data
+      subFolders: no
+      order: 200
+      runAlways: yes
+      encoding: utf-8
+      matchFullPath: no
+  naming:
+    useOnlyFileName: no
+    includeBaseFolderName: no
